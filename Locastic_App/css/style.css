@@ -1,0 +1,78 @@
+body {
+	padding: 0;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+	margin: 30px 0;
+	font-weight: bold;
+}
+
+label {
+	text-align: center;
+	padding-top: 5px;
+}
+.buttons {
+	padding: 15px 0 0 10px;
+}
+.dataButtons {
+	float: right;
+}
+
+.idNumber.ng-valid {
+    background-color: lightgreen;
+}
+.idNumber.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.name.ng-valid {
+    background-color: lightgreen;
+}
+.name.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.surname.ng-valid {
+    background-color: lightgreen;
+}
+.surname.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.address.ng-valid {
+    background-color: lightgreen;
+}
+.address.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.zip.ng-valid {
+    background-color: lightgreen;
+}
+.zip.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.city.ng-valid {
+    background-color: lightgreen;
+}
+.city.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.state.ng-valid {
+    background-color: lightgreen;
+}
+.state.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.phone.ng-valid {
+    background-color: lightgreen;
+}
+.phone.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+.email.ng-valid {
+    background-color: lightgreen;
+}
+.email.ng-dirty.ng-invalid-required {
+    background-color: red;
+}
+
+

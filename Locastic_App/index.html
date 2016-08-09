@@ -1,0 +1,129 @@
+<html>
+  <head>  
+    <title>Locastic App</title>  
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-app="myApp">
+      <div class="container" ng-controller="AppController as ctrl">
+          <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+              <input type="hidden" ng-model="ctrl.user.id" />
+   
+                <h1>Locastic App</h1>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="uid">ID</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.idNumber" id="uid" class="idNumber form-control input-sm" pattern="[0-9]*" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div><!-- End row -->
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="uname">Name</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.name" id="uname" class="name form-control input-sm" required/> 
+                        </div>
+                    </div><!-- End form-group -->
+                </div><!-- End row -->
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="usurname">Surname</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.surname" id="usurname" class="surname form-control input-sm" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div><!-- End row -->
+                         
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="uaddress">Address</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.adress" id="uaddress" class="address form-control input-sm" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div> <!-- End row -->
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="uzip">Zip Code</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.zip" id="uzip" class="zip form-control input-sm" pattern="[0-9]*" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div> <!-- End row -->
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="ucity">City</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.city" id="ucity" class="city form-control input-sm" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div> <!-- End row -->
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="ustate">State</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.state" id="ustate" class="state form-control input-sm" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div> <!-- End row -->   
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="uphone">Phone</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="ctrl.user.phone" id="uphone" class="phone form-control input-sm" pattern="[0-9]*" required />
+                        </div>
+                    </div><!-- End form-group -->
+                </div>   <!-- End row -->
+ 
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label class="col-md-2" id="email">Email</label>
+                        <div class="col-md-10">
+                            <input type="email" ng-model="ctrl.user.email" id="email" class="email form-control input-sm" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required/>
+                        </div>
+                    </div><!-- End form-group -->
+                </div><!-- End row -->
+ 
+                <div class="row">
+                    <div class="form-actions floatRight buttons col-md-offset-2">
+                        <input type="submit"  value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                        <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" >Reset Form</button>
+                    </div><!-- End buttons -->
+                </div><!-- End row -->
+          </form><!-- End form -->
+
+          <h1>Database</h1> 
+          <div  class="database col-md-12" ng-repeat="u in ctrl.users">
+              <span ng-bind="u.id"></span>
+              <span>.</span>
+              <span ng-bind="u.idNumber"></span>
+              <span ng-bind="u.name"></span>
+              <span ng-bind="u.surname"></span>
+              <span ng-bind="u.adress"></span>
+              <span ng-bind="u.zip"></span>
+              <span ng-bind="u.city"></span>
+              <span ng-bind="u.state"></span>
+              <span ng-bind="u.phone"></span>
+              <span ng-bind="u.email"></span>
+
+              <div class="dataButtons">
+                  <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success">Edit</button>
+                  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger">Remove</button>
+              </div><!-- End dataButtons -->
+              <hr>
+          </div><!-- End database -_>
+
+      </div><!-- End container -->
+       
+      <script src="js/angular.min.js"></script> 
+      <script src="js/app.js"></script> 
+
+  </body>
+</html>
